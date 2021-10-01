@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="buttons">
+        <a href="register.html">
+          <button>Register</button>
+        </a>
+        <a href="login.html">
+          <button>Login</button>
+        </a>
+      </div>
+      <img
+        src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        alt="google"
+      />
+      <h1>Split bill</h1>
+    </header>
+    <main>
+      <section class="table">
+        <h2>Group`s Bills:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Decsription</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody> </tbody>
+        </table>
+      </section>
+      <section class="form">
+        <p>Add Bill</p>
+        <form name="addbill">
+          <label for="amount" id="amount">Amount:</label>
+          <input type="text" name="amount" id="amount" />
+          <label for="desc" id="desc">Description:</label>
+          <input type="text" name="desc" id="desc" />
+          <button type="submit">Add</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="./js/bills.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        alt="google"
+      />
+      <h1>Split bill</h1>
+      <p>BEST IN MARKET</p>
+    </header>
+    <main>
+      <div class="form">
+        <h2>Register</h2>
+        <form name="register">
+          <label for="fullName" id="fullName">Full Name</label>
+          <input type="text" name="fullName" id="fullName" required />
+
+          <label for="email" id="email">Email</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="password" id="password1">Password</label>
+          <input type="password" name="password1" id="password1" required />
+
+          <label for="password" id="password2">Repeat Password</label>
+          <input type="password" name="password2" id="password2" required />
+
+          <button type="submit">Register</button>
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </form>
+      </div>
+    </main>
+    <script src="./js/register.js"></script>
+  </body>
+</html>
