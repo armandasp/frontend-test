@@ -15,28 +15,37 @@
   </head>
   <body>
     <header>
+      <div class="buttons">
+        <a href="register.html">
+          <button>Register</button>
+        </a>
+        <a href="login.html">
+          <button>Login</button>
+        </a>
+      </div>
       <img
         src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
         alt="google"
       />
       <h1>Split bill</h1>
-      <p>BEST IN MARKET</p>
     </header>
     <main>
-      <div class="form">
-        <h2>Login</h2>
-        <form name="login">
-          <label for="email" id="email">Email</label>
-          <input type="email" name="email" id="email" required />
-
-          <label for="password" id="password">Password</label>
-          <input type="password" name="password" id="password" required />
-
-          <button type="submit">Login</button>
-          <p>Don`t have an account? <a href="register.html">Register</a></p>
+      <h3 class="select-group">Select your group</h3>
+      <section id="groups">
+        <!-- <div class="group">
+          <h2>ID: 2</h2>
+          <p>trip to Paris</p>
+        </div> -->
+      </section>
+      <section class="form">
+        <p>Add group</p>
+        <form name="addgroup">
+          <label for="id" id="id">Group ID:</label>
+          <input type="number" name="id" id="groupid" />
+          <button type="submit">Add</button>
         </form>
-      </div>
+      </section>
     </main>
-    <script src="./js/login.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
