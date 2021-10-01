@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000";
+const baseURL = "https://mysql-test-l36v5.ondigitalocean.app";
 
 document.forms.register.addEventListener("submit", (e) => {
   e.preventDefault();
