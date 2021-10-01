@@ -25,7 +25,7 @@ document.forms.register.addEventListener("submit", (e) => {
     .then((data) => {
       if (data.msg) {
         alert("Registration succesfull");
-        return location.replace("/login.html");
+        return location.replace("/index.html");
       }
 
       return alert(data.err || "Unexpected error occured. Please try again");

@@ -1,55 +1,34 @@
 const baseURL = "https://mysql-test-l36v5.ondigitalocean.app/back";
 const token = localStorage.getItem("token");
-const queryString = window.location.search;
-const params = queryString.split("=")[1];
 
-function displayGroups(data) {
-  data.forEach((item) => {
-    const allGroups = document.getElementById("groups");
-    const group = document.createElement("div");
-    group.setAttribute("class", "group");
-    allGroups.append(group);
-    const id = document.createElement("h2");
-    const p = document.createElement("p");
-    group.append(id, p);
-    id.textContent = `ID: ${item.group_id}`;
-    p.textContent = item.name;
-    group.addEventListener("click", (e) => {
-      location.replace("/bills.html");
-    });
-  });
-}
+// if (token) {
+//   location.replace("/index.html");
+// }
 
-fetch(`${baseURL}/v1/accounts/acc`, {
-  headers: {
-    authorization: `Bearer ${token}`,
-  },
-})
-  .then((res) => res.json())
-  .then((data) => displayGroups(data))
-  .catch((err) => alert(err));
-
-document.forms.addgroup.addEventListener("submit", (e) => {
-  console.log("veikia");
+document.forms.login.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const group_id = document.getElementById("groupid").value;
+  const email = e.target.elements.email.value.trim().toLowerCase();
+  const password = e.target.elements.password.value;
 
-  console.log(group_id);
+  console.log(email, password);
 
-  fetch(`${baseURL}/v1/accounts/acc`, {
+  fetch(`${baseURL}/v1/auth/login`, {
     method: "POST",
     headers: {
-      authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ group_id }),
+    body: JSON.stringify({ email, password }),
   })
     .then((res) => res.json())
     .then((data) => {
-      document.forms.addgroup.reset();
-      location.replace("/index.html");
-      alert("data added successfully");
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        location.replace("/groups.html");
+        return "";
+      }
+
+      return alert(data.err || "Unexpected error occured. Please try again");
     })
     .catch((err) => alert(err));
 });
