@@ -1,8 +1,5 @@
 const baseURL = "https://mysql-test-l36v5.ondigitalocean.app/back";
 const token = localStorage.getItem("token");
-const queryString = window.location.search;
-
-console.log(queryString);
 
 function displaytable(data) {
   data.forEach((item) => {
